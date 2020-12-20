@@ -1,4 +1,4 @@
-package com.example.taskday8;
+package com.example.mybtpns;
 
 import org.junit.Test;
 

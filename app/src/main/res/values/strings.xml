@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TaskDay8</string>
+    <string name="app_name">myBTPNS</string>
     <string name="belum_punya_akun_daftar">Belum punya akun? Daftar</string>
     <string name="login">Login</string>
     <string name="lupa_password">Lupa password ?</string>
@@ -23,4 +23,10 @@
     <string name="siti_khadijah">Siti Khadijah</string>
     <string name="aisyah">Aisyah</string>
     <string name="todo">TODO</string>
+    <string name="jumlah_tagihan">Jumlah Tagihan</string>
+    <string name="pilih_operator">Pilih Operator</string>
+    <string name="pascabayar">Pascabayar</string>
+    <string name="xl_axiata">XL axiata</string>
+    <string name="indosat">Indosat</string>
+    <string name="telkomsel">Telkomsel</string>
 </resources>
