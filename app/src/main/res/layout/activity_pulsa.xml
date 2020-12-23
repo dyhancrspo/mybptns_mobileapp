@@ -52,6 +52,7 @@
 
     <!--    Card User Saldo Information    -->
     <androidx.cardview.widget.CardView
+        app:cardBackgroundColor="@color/white"
         android:id="@+id/cardview_top"
         android:layout_width="320dp"
         android:layout_height="240dp"
@@ -365,6 +366,7 @@
                         <!--Item 1-->
                         <androidx.cardview.widget.CardView
                             android:id="@+id/operator_telkomsel"
+                            app:cardBackgroundColor="@color/white"
                             android:layout_margin="15dp"
                             android:layout_width="120dp"
                             android:layout_height="120dp"
@@ -376,6 +378,7 @@
                                 android:orientation="vertical">
                                 <androidx.cardview.widget.CardView
                                     android:id="@+id/heads_user1"
+                                    app:cardBackgroundColor="@color/white"
                                     android:layout_width="70dp"
                                     android:layout_height="80dp"
                                     app:cardCornerRadius="40dp"
@@ -402,6 +405,7 @@
                         <!--Item 2-->
                         <androidx.cardview.widget.CardView
                             android:id="@+id/operator_xl"
+                            app:cardBackgroundColor="@color/white"
                             app:cardCornerRadius="@dimen/loginCardRadius"
                             android:layout_margin="15dp"
                             android:layout_width="120dp"
@@ -412,6 +416,7 @@
                                 android:orientation="vertical">
                                 <androidx.cardview.widget.CardView
                                     android:id="@+id/heads_user2"
+                                    app:cardBackgroundColor="@color/white"
                                     android:layout_width="70dp"
                                     android:layout_height="80dp"
                                     android:layout_gravity="center_horizontal"
@@ -436,6 +441,7 @@
 
                         <!--Item 3-->
                         <androidx.cardview.widget.CardView
+                            app:cardBackgroundColor="@color/white"
                             android:id="@+id/operator_indosat"
                             app:cardCornerRadius="@dimen/loginCardRadius"
                             android:layout_margin="15dp"
@@ -446,6 +452,7 @@
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical">
                                 <androidx.cardview.widget.CardView
+                                    app:cardBackgroundColor="@color/white"
                                     android:id="@+id/heads_user3"
                                     android:layout_width="70dp"
                                     android:layout_height="80dp"
@@ -482,6 +489,7 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomnav"
+        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"

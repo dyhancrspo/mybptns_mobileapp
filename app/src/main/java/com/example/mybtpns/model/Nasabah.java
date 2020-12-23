@@ -4,17 +4,15 @@ import com.google.gson.annotations.SerializedName;
 
 public class Nasabah {
 
+	@SerializedName("id")
+	private Long id;
+
 	@SerializedName("password")
 	private String password;
 
-	@SerializedName("nasabahId")
-	private int nasabahId;
 
-	@SerializedName("userId")
-	private int userId;
-
-	@SerializedName("username")
-	private String username;
+	@SerializedName("email")
+	private String email;
 
 	public void setPassword(String password){
 		this.password = password;
@@ -24,27 +22,19 @@ public class Nasabah {
 		return password;
 	}
 
-	public void setNasabahId(int nasabahId){
-		this.nasabahId = nasabahId;
+	public Long getId() {
+		return id;
 	}
 
-	public int getNasabahId(){
-		return nasabahId;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
-	public void setUserId(int userId){
-		this.userId = userId;
+	public String getEmail() {
+		return email;
 	}
 
-	public int getUserId(){
-		return userId;
-	}
-
-	public void setUsername(String username){
-		this.username = username;
-	}
-
-	public String getUsername(){
-		return username;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 }

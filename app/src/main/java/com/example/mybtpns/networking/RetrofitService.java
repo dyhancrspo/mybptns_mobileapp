@@ -7,54 +7,15 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitService {
+    private static Retrofit retrofit = new Retrofit.Builder()
+            .baseUrl("http://192.168.43.4:8080/dummybank/api/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build();
 
-    private Retrofit retrofit;
-
-    private static Retrofit getRetrofit() {
-        HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
-        httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-
-        OkHttpClient okHttpClient = new OkHttpClient.Builder().addInterceptor(httpLoggingInterceptor).build();
-
-
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.0.2.2:8080/api/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .client(okHttpClient)
-                .build();
-
-        return retrofit;
-
+    public static <S> S createService(Class<S> serviceClass){
+        return retrofit.create(serviceClass);
     }
-
-    public static NasabahApi getNasabahApi() {
-        NasabahApi nasabahApi = getRetrofit().create(NasabahApi.class);
-
-        return nasabahApi;
-    }
-
-//    private static Retrofit getRetrofit() {
-//        HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
-//        httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-//
-//        OkHttpClient okHttpClient = new OkHttpClient.Builder().addInterceptor(httpLoggingInterceptor).build();
-//
-//
-//        Retrofit retrofit = new Retrofit.Builder()
-//                .baseUrl("http://10.0.2.2:8080/api/")
-//                .addConverterFactory(GsonConverterFactory.create())
-//                .client(okHttpClient)
-//                .build();
-//
-//        return retrofit;
-//
-//    }
-//
-//    public static NasabahApi getNasabahApi() {
-//        NasabahApi nasabahApi = getRetrofit().create(NasabahApi.class);
-//
-//        return nasabahApi;
-//    }
-
-
 }
+
+
+

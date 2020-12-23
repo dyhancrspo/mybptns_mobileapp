@@ -45,12 +45,15 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="20dp"
+                app:boxBackgroundMode="outline"
+                app:boxBackgroundColor="#F77400"
                 android:hint="@string/nama">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_regist_nama"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:hint="Nama Lengkap" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -63,12 +66,15 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="20dp"
+                app:boxBackgroundMode="outline"
+                app:boxBackgroundColor="#F77400"
                 android:hint="@string/no_rekening">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_regist_norek"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    />
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -81,6 +87,8 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="20dp"
+                app:boxBackgroundMode="outline"
+                app:boxBackgroundColor="#F77400"
                 android:hint="@string/alamat">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -98,6 +106,8 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="20dp"
+                app:boxBackgroundMode="outline"
+                app:boxBackgroundColor="#F77400"
                 android:hint="@string/no_hp">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -116,6 +126,8 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="20dp"
+                app:boxBackgroundMode="outline"
+                app:boxBackgroundColor="#F77400"
                 android:hint="@string/username">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -134,6 +146,8 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="20dp"
+                app:boxBackgroundMode="outline"
+                app:boxBackgroundColor="#F77400"
                 android:hint="@string/password">
 
                 <com.google.android.material.textfield.TextInputEditText

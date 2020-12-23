@@ -53,6 +53,7 @@
 <!--    Card User Saldo Information    -->
         <androidx.cardview.widget.CardView
             android:id="@+id/cardview_top"
+            app:cardBackgroundColor="@color/white"
             android:layout_width="320dp"
             android:layout_height="240dp"
             android:layout_centerHorizontal="true"
@@ -400,6 +401,7 @@
 
                      <!--Item 1-->
                         <androidx.cardview.widget.CardView
+                            app:cardBackgroundColor="@color/white"
                             android:id="@+id/receiver_1"
                             android:layout_margin="15dp"
                             android:layout_width="120dp"
@@ -438,6 +440,7 @@
 
                         <!--Item 2-->
                         <androidx.cardview.widget.CardView
+                            app:cardBackgroundColor="@color/white"
                             android:id="@+id/receiver_2"
                             app:cardCornerRadius="@dimen/loginCardRadius"
                             android:layout_margin="15dp"
@@ -474,6 +477,7 @@
 
                         <!--Item 3-->
                         <androidx.cardview.widget.CardView
+                            app:cardBackgroundColor="@color/white"
                             android:id="@+id/receiver_3"
                             app:cardCornerRadius="@dimen/loginCardRadius"
                             android:layout_margin="15dp"
@@ -509,6 +513,7 @@
 
                         <!--Item 4-->
                         <androidx.cardview.widget.CardView
+                        app:cardBackgroundColor="@color/white"
                             android:id="@+id/receiver_4"
                             android:layout_margin="15dp"
                             app:cardCornerRadius="@dimen/loginCardRadius"
@@ -544,6 +549,7 @@
 
                         <!--Item 5-->
                         <androidx.cardview.widget.CardView
+                            app:cardBackgroundColor="@color/white"
                             android:id="@+id/receiver_5"
                             android:layout_margin="15dp"
                             app:cardCornerRadius="@dimen/loginCardRadius"
@@ -603,6 +609,7 @@
     <!--        />-->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomnav"
+        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
