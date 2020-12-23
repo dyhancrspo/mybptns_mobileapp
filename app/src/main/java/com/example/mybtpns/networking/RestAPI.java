@@ -16,7 +16,7 @@ public interface RestAPI {
     @POST("login/")
     Call<APIResponse> loginNasabah(@Body LoginModel body);
 
-    @POST("nasabah/")
+    @POST("register")
     Call<APIResponse> registerNasabah(@Body RegisterModel body);
 
     @GET("saldo/{username}")

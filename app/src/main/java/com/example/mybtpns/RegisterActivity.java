@@ -1,29 +1,36 @@
 package com.example.mybtpns;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProviders;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.button.MaterialButton;
-import com.google.android.material.textfield.TextInputEditText;
+import com.example.mybtpns.databinding.ActivityLoginBinding;
+import com.example.mybtpns.databinding.ActivityRegisterBinding;
+import com.example.mybtpns.model.APIResponse;
+import com.example.mybtpns.model.RegisterModel;
+import com.example.mybtpns.viewmodel.AppViewModel;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private MaterialButton bt_register;
-    private TextView bt_login;
-    private TextInputEditText et_regist_nama, et_regist_norek, et_regist_alamat, et_regist_notelp, et_regist_username, et_regist_password;
+    private AppViewModel appViewModel;
+    private ActivityRegisterBinding binding;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        binding = ActivityRegisterBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
         initView();
-        bt_login.setOnClickListener(new View.OnClickListener() {
+
+
+        binding.btLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
@@ -31,33 +38,42 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-        bt_register.setOnClickListener(new View.OnClickListener() {
+        binding.btRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 doRegister();
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent);
             }
         });
     }
 
 
     private void initView() {
-        bt_login    = findViewById(R.id.bt_login);
-        bt_register = findViewById(R.id.bt_register);
-        et_regist_nama     = findViewById(R.id.et_regist_nama);
-        et_regist_norek    = findViewById(R.id.et_regist_norek);
-        et_regist_alamat   = findViewById(R.id.et_regist_alamat);
-        et_regist_notelp   = findViewById(R.id.et_regist_notelp);
-        et_regist_username = findViewById(R.id.et_regist_username);
-        et_regist_password = findViewById(R.id.et_regist_password);
+        appViewModel = ViewModelProviders.of(this).get(AppViewModel.class);
+        appViewModel.init();
     }
 
     private void doRegister() {
-        if (!et_regist_username.getText().toString().equals("")&&!et_regist_password.getText().toString().equals("")){
-            Intent intent = new Intent(RegisterActivity.this,MainActivity.class);
-            Toast.makeText(getApplicationContext(),"Yeay!" + et_regist_username.getText() + " kamu berhasil Login.",Toast.LENGTH_LONG).show();
-            startActivity(intent);
+        String fullname = binding.etRegistNama.getText().toString();
+        String accountnumber = binding.etRegistNorek.getText().toString();
+        String address = binding.etRegistAlamat.getText().toString();
+        String phonenumber = binding.etRegistNotelp.getText().toString();
+        String username = binding.etRegistUsername.getText().toString();
+        String password = binding.etRegistPassword.getText().toString();
+
+        if (fullname.equals("")&&accountnumber.equals("")&&address.equals("")&&phonenumber.equals("")&&username.equals("")&&password.equals("")) {
+            Toast.makeText(getApplicationContext(),"Mohon Lengkapi Data Registrasi", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(getApplicationContext(),"Mohon isi Username dan Password",Toast.LENGTH_LONG).show();
+            RegisterModel registerModel = new RegisterModel(fullname, accountnumber, address, phonenumber, username, password);
+            appViewModel.registerNasabah(registerModel).observe(this, nasabahsResponse -> {
+                System.out.println("register response : " + nasabahsResponse.getMessage());
+                APIResponse response = nasabahsResponse;
+                if (response.getResponse() == 200) {
+                    Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                    startActivity(intent);
+                }
+            });
         }
     }
 
