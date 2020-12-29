@@ -51,4 +51,21 @@ public class AppViewModel extends ViewModel {
         mutableLiveData = appRepository.getSaldo(string);
         return mutableLiveData;
     }
+
+    public LiveData<APIResponse> getNasabah(String string){
+        if (mutableLiveData == null){
+            appRepository = AppRepository.getInstance();
+        }
+        mutableLiveData = appRepository.getNasabah(string);
+        return mutableLiveData;
+    }
+
+    public LiveData<APIResponse> getMutasi(String string){
+        if (mutableLiveData == null){
+            appRepository = AppRepository.getInstance();
+        }
+        mutableLiveData = appRepository.getMutasi(string);
+        return mutableLiveData;
+    }
+
 }

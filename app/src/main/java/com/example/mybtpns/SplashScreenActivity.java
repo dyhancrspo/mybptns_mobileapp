@@ -25,8 +25,8 @@ public class SplashScreenActivity extends AppCompatActivity {
     }
 
     void myAnimation() {
-        bgSplash.animate().translationY(-2600).setDuration(1000).setStartDelay(4000);
-        logo_splash.animate().translationY(2600).setDuration(1000).setStartDelay(4000);
+        bgSplash.animate().translationY(-2600).setDuration(1000).setStartDelay(3000);
+        logo_splash.animate().translationY(2600).setDuration(1000).setStartDelay(3000);
     }
 
     Thread thread = new Thread(){

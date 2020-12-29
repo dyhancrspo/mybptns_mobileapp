@@ -74,7 +74,7 @@ public class AppRepository {
             @Override
             public void onResponse(Call<APIResponse> call, Response<APIResponse> responses) {
                 regisresponse.setValue(responses.body());
-                System.out.println("test : " + responses.body());
+                System.out.println("register : " + responses.body());
             }
 
             @Override
@@ -91,7 +91,7 @@ public class AppRepository {
             @Override
             public void onResponse(Call<APIResponse> call, Response<APIResponse> response) {
                 saldoRequest.setValue(response.body());
-                System.out.println("Testv");
+                System.out.println("Get Saldo");
             }
 
             @Override
@@ -101,4 +101,41 @@ public class AppRepository {
         });
         return saldoRequest;
     }
+
+    public MutableLiveData<APIResponse> getNasabah(String string){
+        MutableLiveData<APIResponse> nasabahRequest = new MutableLiveData<>();
+        RestAPI.getSaldo(string).enqueue(new Callback<APIResponse>() {
+            @Override
+            public void onResponse(Call<APIResponse> call, Response<APIResponse> response) {
+                nasabahRequest.setValue(response.body());
+                System.out.println("Get Nasabah");
+            }
+
+            @Override
+            public void onFailure(Call<APIResponse> call, Throwable t) {
+                nasabahRequest.setValue(null);
+            }
+        });
+        return nasabahRequest;
+    }
+
+    public MutableLiveData<APIResponse> getMutasi(String string){
+        MutableLiveData<APIResponse> nasabahRequest = new MutableLiveData<>();
+        RestAPI.getSaldo(string).enqueue(new Callback<APIResponse>() {
+            @Override
+            public void onResponse(Call<APIResponse> call, Response<APIResponse> response) {
+                nasabahRequest.setValue(response.body());
+                System.out.println("Get Nasabah");
+            }
+
+            @Override
+            public void onFailure(Call<APIResponse> call, Throwable t) {
+                nasabahRequest.setValue(null);
+            }
+        });
+        return nasabahRequest;
+    }
+
+
+
 }

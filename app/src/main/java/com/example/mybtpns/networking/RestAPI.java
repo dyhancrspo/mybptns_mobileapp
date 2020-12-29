@@ -22,7 +22,13 @@ public interface RestAPI {
     @GET("saldo/{username}")
     Call<APIResponse> getSaldo(@Path("username")String checkSaldo);
 
-    @POST("logout/")
+    @GET("nasabah/{username}")
+    Call<APIResponse> getNasabah(@Path("username")String dataUser);
+
+    @GET("mutasi/{accountnumber}")
+    Call<APIResponse> getMutasi(@Path("accountnumber") String norek);
+
+    @GET("logout/")
     Call<APIResponse> logoutNasabah();
 
 }

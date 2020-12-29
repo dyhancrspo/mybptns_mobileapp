@@ -1,50 +1,44 @@
 package com.example.mybtpns.model;
 
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
 
 public class NasabahResponse {
 
-	@SerializedName("data")
-	private Nasabah nasabah;
+    @SerializedName("status")
+    @Expose
+    private String status;
 
-	@SerializedName("response")
-	private int response;
+    @SerializedName("response")
+    @Expose
+    private String response;
 
-	@SerializedName("message")
-	private String message;
+    @SerializedName("message")
+    @Expose
+    private String message;
 
-	@SerializedName("status")
-	private String status;
+    public String getStatus() {
+        return status;
+    }
 
-	public void setNasabah(Nasabah nasabah){
-		this.nasabah = nasabah;
-	}
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
-	public Nasabah getNasabah(){
-		return nasabah;
-	}
+    public String getMessage() {
+        return message;
+    }
 
-	public void setResponse(int response){
-		this.response = response;
-	}
+    public void setMessage(String message) {
+        this.message = message;
+    }
 
-	public int getResponse(){
-		return response;
-	}
+    public String getResponse() {
+        return response;
+    }
 
-	public void setMessage(String message){
-		this.message = message;
-	}
-
-	public String getMessage(){
-		return message;
-	}
-
-	public void setStatus(String status){
-		this.status = status;
-	}
-
-	public String getStatus(){
-		return status;
-	}
+    public void setResponse(String response) {
+        this.response = response;
+    }
 }
